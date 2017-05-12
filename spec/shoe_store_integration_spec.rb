@@ -6,18 +6,18 @@ set(:show_exceptions, false)
 
 
 describe('the store path', {:type => :feature}) do
-  it ('goes to the index page and confirms there are not yet any projects in projects list.') do
+  it ('goes to the index page and confirms Mallz page.') do
     visit('/')
     expect(page).to have_content('MALL-Z')
   end
 
-  it ('goes to the index page and confirms there are not yet any stores.') do
+  it ('goes to the brands page and confirms link is working to brands.') do
     visit('/')
     click_link('See all Brands')
     expect(page).to have_content('Add a brand')
   end
 
-  it ('Takes user input project name and adds it to the projects list.') do
+  it ('navigates to brand page and creates a brand with name and price.') do
     visit('/')
     click_link('See all Brands')
     fill_in('brand', :with => 'nike')
@@ -26,7 +26,7 @@ describe('the store path', {:type => :feature}) do
     expect(page).to have_content('Nike')
   end
 
-  it ('Takes user input project name and adds it to the projects list.') do
+  it ('navigates to the stores page and creates a store with a name.') do
     visit('/')
     click_link('See all Stores')
     click_link('Enter Store to join this very comfortable mall')
