@@ -4,6 +4,7 @@ class Brand < ActiveRecord::Base
   validates :price, presence: true
   before_create :capitalize
   validates :name, uniqueness: true
+  validates :name, length: { maximum: 100 }
 
 
   private
