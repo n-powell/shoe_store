@@ -5,8 +5,6 @@ This is a sample shoe mall with the ability to add stores and shoe brands.
 
 ### Installing
 
-Installation is quick and easy! First you can open this link <!--HEROKU LINK HERE--> to see the webpage in action live online. Or you can clone this repository to your machine, navigate to the file path in your terminal, and run 'app.rb' by typing '$ruby app.rb'. If you chose to clone the repository, after you run 'app.rb' you will need to copy the localhost path into your web browser. The standard localhost for Sinatra is port 4567
-
 ## Built With
 
 * Ruby
@@ -14,7 +12,6 @@ Installation is quick and easy! First you can open this link <!--HEROKU LINK HER
 * HTML
 * CSS
 * Bootstrap https://getbootstrap.com/
-* ES6
 * Jquery https://jquery.com/
 
 ## Authors
@@ -25,7 +22,7 @@ Installation is quick and easy! First you can open this link <!--HEROKU LINK HER
 
 MIT License
 
-Copyright (c) <!--YOUR NAME & YEAR HERE-->
+Copyright (c) Nick Powell
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
