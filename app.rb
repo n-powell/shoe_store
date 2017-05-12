@@ -46,9 +46,21 @@ get "/brands" do
   erb(:brands)
 end
 
-
+#deletes store by id
 delete "/store/:id/delete" do
   @store = Store.find(params['id'].to_i)
   @store.delete
   redirect "/"
+end
+
+get "/store/:id/edit" do
+  @store = Store.find(params['id'].to_i)
+  erb(:edit_store)
+end
+
+patch "/store/:id/edit" do
+  @store = Store.find(params['id'].to_i)
+  name = params['store_name']
+  @store.update(name: name)
+  erb(:store)
 end
