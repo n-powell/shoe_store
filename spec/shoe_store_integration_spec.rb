@@ -35,4 +35,17 @@ describe('the store path', {:type => :feature}) do
     click_link('See all Stores')
     expect(page).to have_content('Zooms')
   end
+
+  it ('navigates to the stores page and creates a store with a name.') do
+    visit('/')
+    click_link('See all Stores')
+    click_link('Enter Store to join this very comfortable mall')
+    fill_in('store_name', :with => 'pizza')
+    click_button('Submit')
+    click_link('See all Stores')
+    click_link('Pizza')
+    click_link('Edit Store')
+    click_button('Delete Store from MALL-Z')
+    expect(page).to have_no_content('Pizza')
+  end
 end
