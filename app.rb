@@ -45,3 +45,10 @@ get "/brands" do
   @all_brands = Brand.all
   erb(:brands)
 end
+
+
+delete "/store/:id/delete" do
+  @store = Store.find(params['id'].to_i)
+  @store.delete
+  redirect "/"
+end

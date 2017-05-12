@@ -1,1 +1,8 @@
 <h1><%=@store.name%></h1>
+<a href="/store/<%=@store.id%>/edit">Edit Store</a>
+<br>
+
+<form action="/store/<%=@store.id%>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Delete</button>
+</form>

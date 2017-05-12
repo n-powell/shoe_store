@@ -1,0 +1,9 @@
+<h3>Edit store:</h3>
+<form action="/recipe/<%=@recipe.id%>/edit" method="post">
+  <div class="form-group">
+    <input type="hidden" name="_method" value="patch">
+    <label for="recipe_name">Enter store name:</label>
+    <input type="text" name="recipe_name" id="recipe_name">
+  </div>
+  <button type="submit">Submit</button>
+</form>
