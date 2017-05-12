@@ -21,3 +21,9 @@ post "/store/new" do
   new_store = Store.create(name: store_name)
   erb(:index)
 end
+
+get "/store/:id" do
+  @all_stores = Store.all
+  @store = Store.find(params['id'])
+  erb(:store)
+end
