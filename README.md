@@ -1,14 +1,7 @@
-# <!--PROJECT NAME HERE-->
+# MALL-Z
 
-<!--PROJECT DESCRIPTION HERE-->
+This is a sample shoe mall with the ability to add stores and shoe brands.
 
-### Prerequisites
-
-Web browser with ES6 compatibility
-Examples: Chrome, Safari
-
-Ruby <!--VERSION HERE-->
-Bundler
 
 ### Installing
 
@@ -26,7 +19,7 @@ Installation is quick and easy! First you can open this link <!--HEROKU LINK HER
 
 ## Authors
 
-* <!--YOUR NAME HERE-->
+* Nick Powell
 
 ## License
 
@@ -51,4 +44,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
