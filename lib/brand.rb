@@ -8,7 +8,6 @@ class Brand < ActiveRecord::Base
   before_validation :capitalize
   before_update :capitalize
 
-
   private
   def capitalize
     self.name = name.capitalize

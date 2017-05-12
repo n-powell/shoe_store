@@ -6,9 +6,6 @@ class Store < ActiveRecord::Base
   before_create :capitalize
   before_update :capitalize
   before_validation :capitalize
-  before_create :capitalize
-
-
 
   private
   def capitalize
