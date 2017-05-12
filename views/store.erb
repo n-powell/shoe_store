@@ -6,3 +6,13 @@
   <input type="hidden" name="_method" value="delete">
   <button type="submit">Delete</button>
 </form>
+
+<ul>
+  <% @store.brands.each do |brand|%>
+  <form action="/store/<%=@store.id%>/brand/delete" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <input type="hidden" name="brand_id" value="<%=brand.id%>">
+    <li><%= brand.name %>  <button type="submit">Delete</button></li>
+  </form>
+  <%end%>
+</ul>

@@ -53,14 +53,24 @@ delete "/store/:id/delete" do
   redirect "/"
 end
 
+#gets store id and routes to edit page
 get "/store/:id/edit" do
   @store = Store.find(params['id'].to_i)
+  @all_brands = Brand.all
   erb(:edit_store)
 end
 
+#performs name update
 patch "/store/:id/edit" do
   @store = Store.find(params['id'].to_i)
   name = params['store_name']
   @store.update(name: name)
   erb(:store)
+end
+
+post "/store/:id/brands/select" do
+  @store = Store.find(params['id'].to_i)
+  brand_ids = params.fetch("store_brands")
+  brand_ids.map { |brand_id| @store.brands.push(Brand.find(brand_id))  }
+  redirect "/store/#{@store.id}"
 end
