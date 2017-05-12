@@ -1,0 +1,19 @@
+<h3>Brands that exist</h3>
+<ul>
+  <% @all_brands.each do |brand|%>
+
+    <li><%= brand.name %> - $<%= brand.price %>.00</li>
+
+  <%end%>
+</ul>
+</div>
+
+
+<h2>Add a brand</h2>
+<form action="/brand/new" method="post">
+  <label for="brand">Enter a new brand:</label>
+  <input id="brand" type="text" name="brand">
+  <label for="price">Enter a price:</label>
+  <input id="price" type="text" name="price">
+  <button type="submit">Submit</button>
+</form>

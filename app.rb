@@ -27,3 +27,15 @@ get "/store/:id" do
   @store = Store.find(params['id'])
   erb(:store)
 end
+
+post "/brand/new" do
+  brand = params['brand']
+  price = params['price']
+  Brand.create(name: brand, price: price)
+  redirect "/brands"
+end
+
+get "/brands" do
+  @all_brands = Brand.all
+  erb(:brands)
+end
