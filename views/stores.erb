@@ -1,0 +1,10 @@
+<h3>Visit one of these stores perhaps</h3>
+<% if  @all_stores.any? %>
+<ul>
+  <% @all_stores.each do |store| %>
+<li><a href="/store/<%=store.id%>"><%= store.name %></a></li>
+  <%end%>
+</ul>
+<% else %>
+<h3>MALL-Z is currently under construction. Perhaps you should suggest a store to join the mall</h3>
+<% end %>
