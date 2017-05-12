@@ -1,15 +1,32 @@
-<h3>Edit store:</h3>
+<h3>Edit <%=@store.name%></h3>
+
+<form action="/store/<%=@store.id%>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">Delete Store from MALL-Z</button>
+</form>
+<br>
 <form action="/store/<%=@store.id%>/edit" method="post">
   <div class="form-group">
     <input type="hidden" name="_method" value="patch">
-    <label for="store_name">Enter store name:</label>
+    <label for="store_name">Edit store name:</label>
     <input type="text" name="store_name" id="store_name">
   </div>
   <button type="submit">Submit</button>
 </form>
+<br>
+<h2>Current available brands at the store</h2>
+<ul>
+  <% @store.brands.each do |brand|%>
+  <form action="/store/<%=@store.id%>/brand/delete" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <input type="hidden" name="brand_id" value="<%=brand.id%>">
+    <li><%= brand.name %>  <button type="submit">Delete</button></li>
+  </form>
+  <%end%>
+</ul>
+<br>
 
 <form action="/store/<%=@store.id%>/brands/select" method="post">
-  <h2>All available brands:</h2>
   <h3>Select to add brands to the store.</h3>
     <% if @all_brands.any? %>
     <ul>

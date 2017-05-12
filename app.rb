@@ -74,3 +74,10 @@ post "/store/:id/brands/select" do
   brand_ids.map { |brand_id| @store.brands.push(Brand.find(brand_id))  }
   redirect "/store/#{@store.id}"
 end
+
+patch "/store/:id/brand/delete" do
+  @store = Store.find(params['id'].to_i)
+  brand = Brand.find(params['brand_id'])
+  @store.brands.delete(brand)
+  redirect "/store/#{@store.id}"
+end

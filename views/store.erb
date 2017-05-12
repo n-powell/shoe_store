@@ -2,17 +2,13 @@
 <a href="/store/<%=@store.id%>/edit">Edit Store</a>
 <br>
 
-<form action="/store/<%=@store.id%>/delete" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button type="submit">Delete</button>
-</form>
 
+
+<h2>Brands currently sold at this store</h2>
 <ul>
   <% @store.brands.each do |brand|%>
-  <form action="/store/<%=@store.id%>/brand/delete" method="post">
-    <input type="hidden" name="_method" value="patch">
-    <input type="hidden" name="brand_id" value="<%=brand.id%>">
-    <li><%= brand.name %>  <button type="submit">Delete</button></li>
-  </form>
+
+    <li><%= brand.name %> -- $<%= brand.price %>.00 </li>
+
   <%end%>
 </ul>
