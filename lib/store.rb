@@ -4,6 +4,8 @@ class Store < ActiveRecord::Base
   validates :name, length: { maximum: 100 }
   before_create :capitalize
   validates :name, uniqueness: true
+  before_create :capitalize
+
 
 
   private
